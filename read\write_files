@@ -1,0 +1,22 @@
+import random
+
+list1 = []
+file = open("d:\python\darbas2.txt", "w+")
+for i in range(10):
+    list1.append(random.randint(0, 100))
+file.write(f"{str(list1)}")
+file.close()
+
+file = open("d:\python\darbas2.txt", "r")
+file2 = open("d:\python\darbas3.txt", "w")
+
+def convert(string):
+    list1 = list(string.split(","))
+    return list1
+content = file.read()
+str1 = content.strip("[]")
+list1 = (convert(str1))[::-1]
+file2.write(f"{list1}")
+
+file2.close()
+file.close()
